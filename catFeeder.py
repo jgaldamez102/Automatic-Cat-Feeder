@@ -6,7 +6,7 @@ Joses Galdamez - jgaldamez102@gmail.com
 """
 
 import sys
-from datetime import datetime
+import datetime
 
 sys.path.append('home/pi/Dexter/GrovePi/Software/Python')
 
