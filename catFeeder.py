@@ -23,13 +23,15 @@ def init():
     #current time 
     while True:
         currTime = datetime.datetime.now()
+        #writing the current time on the LCD screen
+        lcd.setText_norefresh(currTime)
         currTimeHour = currTime.hour
         currTimeMinute = currTime.minute
         currTimeSecond = currTime.second
         print(currTimeSecond)
         # print(currTime)
         #if the it hits a new
-        if (currTimeSecond >= 0 and currTimeSecond <= 1):
+        if (currTimeSecond ==0):
             grovepi.digitalWrite(PORT_BUZZER, 1)
         else:
             grovepi.digitalWrite(PORT_BUZZER, 0)
