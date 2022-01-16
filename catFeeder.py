@@ -33,8 +33,10 @@ def init():
         #if the it hits a new
         if (currTimeSecond ==0):
             grovepi.digitalWrite(PORT_BUZZER, 1)
+            lcd.setText_norefresh("FEEDING TIME")
         else:
             grovepi.digitalWrite(PORT_BUZZER, 0)
+            lcd.setText_norefresh("Time: " + str(currTime))
         
     return 
 if __name__ == "__main__":
