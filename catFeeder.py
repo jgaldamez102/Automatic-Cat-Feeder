@@ -18,7 +18,7 @@ grovepi.pinMode(PORT_BUZZER, "OUTPUT")
 
 def init():
     #initalize the display of the LCD
-    # lcd.setRGB(224,255,255) # cool blue color
+    lcd.setRGB(224,255,255) # cool blue color
     grovepi.digitalWrite(PORT_BUZZER, 0)# to initalize it turn off
     #current time 
     while True:
@@ -29,8 +29,11 @@ def init():
         print(currTimeSecond)
         # print(currTime)
         #if the it hits a new
-        if (currTimeSecond == 0):
+        if (currTimeSecond >= 0 and currTimeSecond < 1):
             grovepi.digitalWrite(PORT_BUZZER, 1)
+        else:
+            grovepi.digitalWrite(PORT_BUZZER, 0)
+        
     return 
 if __name__ == "__main__":
     init()
