@@ -24,7 +24,7 @@ def init():
     while True:
         currTime = datetime.datetime.now()
         #writing the current time on the LCD screen
-        lcd.setText_norefresh("{:>3}F".format(currTime))
+        lcd.setText_norefresh("{:>3}".format(currTime))
         currTimeHour = currTime.hour
         currTimeMinute = currTime.minute
         currTimeSecond = currTime.second
