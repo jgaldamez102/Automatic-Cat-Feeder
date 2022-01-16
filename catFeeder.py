@@ -7,6 +7,8 @@ Joses Galdamez - jgaldamez102@gmail.com
 
 import sys
 import datetime
+import grovepi
+import grove_rgb_lcd as lcd
 
 sys.path.append('home/pi/Dexter/GrovePi/Software/Python')
 
