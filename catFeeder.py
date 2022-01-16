@@ -29,7 +29,6 @@ def init():
         print(currTimeSecond)
         # print(currTime)
         #if the it hits a new
-<<<<<<< HEAD
         if (currTimeSecond >= 0 and currTimeSecond < 1):
 =======
         if (currTimeSecond >= 0 and currTimeSecond <= 2):
