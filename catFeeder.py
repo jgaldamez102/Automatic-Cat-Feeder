@@ -29,8 +29,11 @@ def init():
         print(currTimeSecond)
         # print(currTime)
         #if the it hits a new
-        if (currTimeSecond == 0):
+        if (currTimeSecond >= 0 and currTimeSecond <= 2):
             grovepi.digitalWrite(PORT_BUZZER, 1)
+        else:
+            grovepi.digitalWrite(PORT_BUZZER, 0)
+        
     return 
 if __name__ == "__main__":
     init()
