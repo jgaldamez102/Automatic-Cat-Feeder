@@ -18,8 +18,7 @@ sys.path.append('home/pi/Dexter/GrovePi/Software/Python')
 PORT_BUZZER = 2 #for D2 on the buzzer
 grovepi.pinMode(PORT_BUZZER, "OUTPUT")
 
-def stepper():
-    control_pins = [7,11,13,15]
+def stepper(control_pins):
     halfstep_seq = [
         [1,0,0,0],
         [1,1,0,0],
@@ -41,6 +40,7 @@ def init():
     lcd.setRGB(224,255,255) # cool blue color
     grovepi.digitalWrite(PORT_BUZZER, 0)# to initalize it turn off
     GPIO.setmode(GPIO.BOARD) #setting up the pins 
+    control_pins = [7,11,13,15]
     for pin in control_pins:
         GPIO.setup(pin, GPIO.OUT)
         GPIO.output(pin, 0)
@@ -57,7 +57,7 @@ def init():
         #if the it hits a new
         if (currTimeSecond ==0):
             grovepi.digitalWrite(PORT_BUZZER, 1)
-            stepper() #calling stepper function
+            stepper(control_pins) #calling stepper function
             lcd.setText("FEEDING TIME")
         else:
             grovepi.digitalWrite(PORT_BUZZER, 0)
