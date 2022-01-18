@@ -21,6 +21,7 @@ def init():
     #initalize the display of the LCD
     lcd.setRGB(224,255,255) # cool blue color
     grovepi.digitalWrite(PORT_BUZZER, 0)# to initalize it turn off
+    GPIO.setmode(GPIO.BOARD)
     #current time 
     while True:
         currTime = datetime.datetime.now()
