@@ -9,6 +9,7 @@ import sys
 import datetime
 import grovepi
 import grove_rgb_lcd as lcd
+import RPi.GPIO as GPIO
 
 sys.path.append('home/pi/Dexter/GrovePi/Software/Python')
 
@@ -36,7 +37,7 @@ def init():
             lcd.setText("FEEDING TIME")
         else:
             grovepi.digitalWrite(PORT_BUZZER, 0)
-            lcd.setText_norefresh("Time: " + str(currTime))
+            lcd.setText_norefresh("Time: " + str(currTime)) 
         
     return 
 if __name__ == "__main__":
