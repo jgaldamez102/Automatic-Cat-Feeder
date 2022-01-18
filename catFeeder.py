@@ -10,6 +10,7 @@ import datetime
 import grovepi
 import grove_rgb_lcd as lcd
 import RPi.GPIO as GPIO
+import time
 
 sys.path.append('home/pi/Dexter/GrovePi/Software/Python')
 
@@ -57,6 +58,7 @@ def init():
             for halfstep in range(8):
                 for pin in range(4):
                     GPIO.output(control_pins[pin], halfstep_seq[halfstep][pin])
+                time.sleep(0.001)
 
         
     return 
