@@ -19,6 +19,15 @@ PORT_BUZZER = 2 #for D2 on the buzzer
 grovepi.pinMode(PORT_BUZZER, "OUTPUT")
 
 def stepper(control_pins):
+    """
+    InA - pin 7 
+    InB - pin 11
+    InC - pin 13
+    InD - pin 15
+    Vcc - pin 4
+    GND - pin 6
+    5mm double D shaft
+    """
     halfstep_seq = [
         [1,0,0,0],
         [1,1,0,0],
